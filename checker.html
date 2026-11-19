@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проверка QR — Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">IT.МОСКВА · Проверка</div>
+      <nav class="nav">
+        <a href="index.html">Моя карточка</a>
+        <a href="checker.html" class="active">Проверка</a>
+        <a href="admin.html">Админ</a>
+      </nav>
+    </header>
+
+    <div class="card" style="max-width:600px; margin:0 auto;">
+      <h2>Проверка статуса студента</h2>
+      <p style="color:var(--text-muted); margin-bottom:24px;">Вставьте токен из QR-кода или отсканируйте (в демо — ввод вручную).</p>
+
+      <div class="input-group">
+        <label>Токен из QR</label>
+        <input type="text" id="tokenInput" placeholder="Вставьте содержимое QR...">
+      </div>
+      <button class="btn" onclick="verifyToken()">Проверить</button>
+
+      <div id="result"></div>
+    </div>
+
+    <p class="footer-note">Серверная проверка подписи, срока действия и статуса</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

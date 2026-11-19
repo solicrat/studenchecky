@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ — Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">IT.МОСКВА · Админ</div>
+      <nav class="nav">
+        <a href="index.html">Моя карточка</a>
+        <a href="checker.html">Проверка</a>
+        <a href="admin.html" class="active">Админ</a>
+      </nav>
+    </header>
+
+    <div class="card">
+      <h2>Тестовые профили</h2>
+      <p style="color:var(--text-muted); margin-bottom:16px;">Управление статусом, данными и бонусами для демо.</p>
+      
+      <div class="table-wrap">
+        <table class="admin-table" id="profilesTable">
+          <thead>
+            <tr>
+              <th>ФИО</th>
+              <th>Группа</th>
+              <th>Статус</th>
+              <th>Баланс</th>
+              <th>Действия</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:24px;">
+        <h3>Добавить / Изменить профиль</h3>
+        <div class="input-group">
+          <label>ФИО</label>
+          <input type="text" id="editName" value="Маслов Максим">
+        </div>
+        <div class="input-group">
+          <label>Группа</label>
+          <input type="text" id="editGroup" value="2ИП-7-25">
+        </div>
+        <div class="input-group">
+          <label>Статус</label>
+          <select id="editStatus">
+            <option value="active">Активен</option>
+            <option value="suspended">Приостановлен</option>
+            <option value="graduated">Выпускник</option>
+          </select>
+        </div>
+        <button class="btn" onclick="saveProfile()">Сохранить профиль</button>
+      </div>
+    </div>
+
+    <!-- Начисление Шабурят -->
+    <div class="card">
+      <h2>Начисление Шабурят</h2>
+      <p style="color:var(--text-muted); margin-bottom:16px;">
+        Текущий баланс студента: <strong id="adminBalance">0</strong> Ш.
+        Положительное число — начисление, отрицательное — списание.
+      </p>
+
+      <div class="input-group">
+        <label>Количество баллов</label>
+        <input type="number" id="awardAmount" placeholder="например 10 или -5" value="10">
+      </div>
+      <div class="input-group">
+        <label>Причина / комментарий</label>
+        <input type="text" id="awardReason" placeholder="Например: Посещение тренировки ИТ.Спорт">
+      </div>
+      <button class="btn success" onclick="handleAward()">Начислить / списать</button>
+
+      <div style="margin-top:20px; padding:14px; background:#0f0f1e; border-radius:12px; border:1px solid var(--card-border); font-size:0.9rem; color:var(--text-muted);">
+        <strong style="color:var(--text);">Справка по правилам:</strong><br>
+        • Обычный потолок — 60 Шабурят в неделю<br>
+        • За одно действие нельзя получить баллы повторно<br>
+        • В «Кампус Фуд» — не более 30% стоимости заказа<br>
+        • Шабурята сгорают в конце учебного года
+      </div>
+    </div>
+
+    <p class="footer-note">Демо-админка. В проде — интеграция с центральным профилем и сервисами начисления.</p>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    renderAdminTable();
+  </script>
+</body>
+</html>

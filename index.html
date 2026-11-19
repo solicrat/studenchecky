@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Электронный студенческий</div>
+      <nav class="nav">
+        <a href="index.html" class="active">Моя карточка</a>
+        <a href="checker.html">Проверка</a>
+        <a href="admin.html">Админ</a>
+      </nav>
+    </header>
+
+    <!-- Профиль -->
+    <div class="card profile-card">
+      <div class="avatar" id="avatar">ММ</div>
+      <div class="profile-info">
+        <h1 id="studentName">Маслов Максим</h1>
+        <p class="meta" id="group">Студент · 2 курс · 2ИП-7-25</p>
+        <p class="meta" id="specialty">Центр программирования и кибербезопасности · поток Альфа</p>
+        <p class="meta" id="program">09.02.07 Информационные системы и программирование</p>
+        <span class="status-badge" id="statusBadge">Статус: Активен</span>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- QR-код для прохода -->
+      <div class="card">
+        <h2>Пропуск в колледж</h2>
+        <p style="color:var(--text-muted); margin-bottom:8px;">Динамический QR-код. Обновляется каждые 60 секунд.</p>
+        <div class="qr-section">
+          <div class="qr-container">
+            <div id="qrcode"></div>
+          </div>
+          <div class="timer" id="timer">Обновление через: 60 сек</div>
+        </div>
+      </div>
+
+      <!-- Кошелёк Шабурята -->
+      <div class="card wallet-card">
+        <h2>Кошелёк · Шабурята</h2>
+        <p style="color:var(--text-muted); margin-bottom:16px;">Единый бонусный баланс колледжа. Можно тратить в «Кампус Фуд» (до 30% заказа).</p>
+
+        <div class="balance-block">
+          <div class="balance-value">
+            <span id="shaburyataBalance">0</span>
+            <small>Шабурят</small>
+          </div>
+          <div class="balance-hint">Начисляются за полезную активность в сервисах колледжа</div>
+        </div>
+
+        <h3 style="margin: 24px 0 12px; font-size:1.1rem;">История операций</h3>
+        <div class="wallet-history" id="walletHistory">
+          <p class="empty-history">Пока нет операций</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-note">
+      Демо Команды 5 · Шабурята — внутренние бонусы. Перевод между студентами и обмен на наличные не предусмотрены.
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
