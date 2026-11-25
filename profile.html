@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль — Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">IT.Шабур · Профиль</div>
+      <nav class="nav">
+        <a href="student.html">Карточка</a>
+        <a href="profile.html" class="active">Профиль</a>
+        <a href="bonuses.html">Шабурята</a>
+        <a href="#" onclick="logout(); return false;">Выйти</a>
+      </nav>
+    </header>
+
+    <div class="card">
+      <h2>Редактирование профиля</h2>
+      <div style="display:flex; gap:20px; align-items:center; margin:20px 0; flex-wrap:wrap;">
+        <div class="avatar" id="avatarPreview" style="width:100px;height:100px;font-size:2rem;">?</div>
+        <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-start;">
+          <label class="btn secondary" style="cursor:pointer; margin:0;">
+            Загрузить аватарку
+            <input type="file" accept="image/*" style="display:none;" onchange="uploadAvatar(this)">
+          </label>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">JPG, PNG до ~1 МБ</p>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>ФИО</label>
+        <input type="text" id="editName" readonly style="background:#0a0a14; color:var(--text-muted); cursor:not-allowed;">
+      </div>
+      <div class="input-group">
+        <label>Описание</label>
+        <textarea id="editDesc" placeholder="Коротко о себе..."></textarea>
+      </div>
+      <div class="input-group">
+        <label>Стеки / умения (через запятую)</label>
+        <input type="text" id="editStacks" placeholder="C++, JavaScript, Python, React">
+      </div>
+      <button class="btn" onclick="saveProfile()">Сохранить</button>
+      <div id="msg" class="success-msg"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>loadProfilePage();</script>
+</body>
+</html>
