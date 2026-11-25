@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Моя карточка — Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">IT.Шабур · Студенческий</div>
+      <nav class="nav">
+        <a href="student.html" class="active">Карточка</a>
+        <a href="profile.html">Профиль</a>
+        <a href="bonuses.html">Шабурята</a>
+        <a href="#" onclick="logout(); return false;">Выйти</a>
+      </nav>
+    </header>
+
+    <div class="card">
+      <div class="profile-header">
+        <div class="avatar" id="avatar">ММ</div>
+        <div style="flex:1;">
+          <h1 id="studentName">...</h1>
+          <div id="studentGroup" style="color:var(--text-muted); margin:6px 0;"></div>
+          <div id="studentSpecialty" style="color:var(--text-muted); margin-bottom:6px;"></div>
+          <div class="status-badge" id="studentStatus"></div>
+          <div style="margin-top:12px; font-size:1.1rem;">
+            Шабурята: <b id="studentBonuses" style="color:var(--accent-green);">0</b>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:20px;">
+        <div style="color:var(--text-muted); font-size:0.9rem; margin-bottom:4px;">Описание</div>
+        <div id="studentDesc" style="margin-bottom:16px;">—</div>
+        <div style="color:var(--text-muted); font-size:0.9rem; margin-bottom:6px;">Стеки</div>
+        <div class="stacks" id="studentStacks"></div>
+      </div>
+    </div>
+
+    <div class="card qr-box">
+      <h2>Электронный студенческий билет</h2>
+      <p style="color:var(--text-muted); margin:8px 0 16px;">Динамический QR — обновляется каждую минуту</p>
+      <div class="qr-container" id="qrcode"></div>
+      <p id="qrTimer" style="font-size:0.9rem; color:var(--text-muted); margin-top:8px;">Обновление через: 60 сек</p>
+      <p style="font-size:0.85rem; color:var(--text-muted);">Покажи этот код на вахте / турникете</p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>loadStudentPage();</script>
+</body>
+</html>

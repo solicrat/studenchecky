@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box card">
+      <h1 style="margin-bottom:8px; background:linear-gradient(90deg,#00d4aa,#4f8cff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">IT.Шабур</h1>
+      <p style="color:var(--text-muted); margin-bottom:24px;">Электронный студенческий билет</p>
+      <div class="input-group">
+        <label>Логин</label>
+        <input type="text" id="login" placeholder="maslov или admin" autocomplete="username">
+      </div>
+      <div class="input-group">
+        <label>Пароль</label>
+        <input type="password" id="password" placeholder="••••••" autocomplete="current-password">
+      </div>
+      <button class="btn" style="width:100%;" onclick="doLogin()">Войти</button>
+      <div id="error" class="error"></div>
+      <p style="margin-top:20px; font-size:0.85rem; color:var(--text-muted);">
+        Тестовые аккаунты:<br>
+        Студент: <b>maslov</b> / 123456<br>
+        Админ: <b>admin</b> / admin123
+      </p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

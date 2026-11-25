@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шабурята — Электронный студенческий</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">IT.Шабур · Шабурята</div>
+      <nav class="nav">
+        <a href="student.html">Карточка</a>
+        <a href="profile.html">Профиль</a>
+        <a href="bonuses.html" class="active">Шабурята</a>
+        <a href="#" onclick="logout(); return false;">Выйти</a>
+      </nav>
+    </header>
+
+    <div class="card" style="text-align:center;">
+      <p style="color:var(--text-muted);">Баланс бонусов</p>
+      <div class="bonus-amount" id="bonusAmount">0</div>
+      <p style="margin-top:8px;">шабурята</p>
+      <button class="btn" style="margin-top:20px;" onclick="alert('Переход в Кампус Фуд (демо)')">Потратить бонусы</button>
+    </div>
+
+    <div class="card">
+      <h3>История начислений</h3>
+      <div id="history" style="margin-top:12px;"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>loadBonusesPage();</script>
+</body>
+</html>
